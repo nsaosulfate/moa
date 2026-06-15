@@ -56,6 +56,18 @@ window.SITES = [
     color2: "#e08a52",
     tags: ["필리핀어", "암기", "문자"],
     font: "'Noto Sans Tagalog', sans-serif"
+  },
+
+  {
+    id: "dday",
+    name: "디데이",
+    sub: "D-Day",
+    desc: "공익 복무 · 조기전역 · 병가/연가/휴일 계산과 캘린더",
+    url: "https://nsaosulfate.github.io/dday/",
+    icon: "D",
+    color: "#2563eb",
+    color2: "#4f8cff",
+    tags: ["공익", "전역", "캘린더", "계산기"]
   }
 
 ];

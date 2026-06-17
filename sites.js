@@ -68,6 +68,18 @@ window.SITES = [
     color: "#2563eb",
     color2: "#4f8cff",
     tags: ["공익", "전역", "캘린더", "계산기"]
+  },
+
+  {
+    id: "kazu",
+    name: "카즈",
+    sub: "Kazu",
+    desc: "일본어 숫자 · 조수사 · 날짜/시간 읽기 암기 카드",
+    url: "https://nsaosulfate.github.io/kazu/",
+    icon: "数",
+    color: "#0ea5a4",
+    color2: "#22c7b8",
+    tags: ["일본어", "숫자", "암기"]
   }
 
 ];

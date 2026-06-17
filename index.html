@@ -78,6 +78,7 @@ a{ color:inherit; }
   width:42px; height:42px; border-radius:12px; font-size:17px;
   border:1px solid var(--line); flex:0 0 auto;
 }
+.lang-btn{ font-size:13px; font-weight:800; letter-spacing:.02em; color:var(--ink); }
 
 /* ───── 히어로 ───── */
 .hero{ margin:18px 2px 18px; }
@@ -204,18 +205,21 @@ footer{ text-align:center; color:var(--sub); font-size:12px; margin-top:34px; li
 
   <div class="appbar">
     <div class="logo"><span class="logo-mark">◈</span>모아<small>moa</small></div>
-    <button class="icon-btn theme-btn" title="테마 전환">🌙</button>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <button class="icon-btn lang-btn">EN</button>
+      <button class="icon-btn theme-btn" data-i18n-title="themeTitle" title="테마 전환">🌙</button>
+    </div>
   </div>
 
   <div class="hero">
-    <div class="hero-greet">내가 만든 사이트,<br>한 곳에서 🗂️</div>
-    <div class="hero-sub">카드를 눌러 바로 들어가요. 새 사이트는 우측 하단에서 추가.</div>
+    <div class="hero-greet" data-i18n="heroTitle">내가 만든 사이트,<br>한 곳에서 🗂️</div>
+    <div class="hero-sub" data-i18n="heroSub">카드를 눌러 바로 들어가요. 새 사이트는 우측 하단에서 추가.</div>
   </div>
 
   <div class="toolbar">
     <div class="search">
       <span class="s-ic">🔍</span>
-      <input id="search" type="search" placeholder="사이트·태그 검색" autocomplete="off">
+      <input id="search" type="search" data-i18n-ph="searchPh" placeholder="사이트·태그 검색" autocomplete="off">
     </div>
   </div>
   <div class="pill-row" id="tagbar"></div>
@@ -223,7 +227,7 @@ footer{ text-align:center; color:var(--sub); font-size:12px; margin-top:34px; li
   <div class="count-line" id="count-line"></div>
   <div class="grid" id="grid"></div>
 
-  <footer>
+  <footer data-i18n="footer">
     모아 · moa — 사이트 추가는 <b>sites.js</b> 파일 또는 화면의 “＋ 사이트 추가” 버튼으로.
   </footer>
 
@@ -234,38 +238,38 @@ footer{ text-align:center; color:var(--sub); font-size:12px; margin-top:34px; li
   <div class="sheet-backdrop" id="sheet-backdrop"></div>
   <div class="sheet">
     <div class="sheet-grip"></div>
-    <h3>사이트 추가</h3>
-    <p class="sub">아래를 채우면 미리보기가 바뀌고, 맨 아래 <b>sites.js에 붙여넣을 코드</b>가 자동 생성돼요.<br>“이 기기에 바로 추가”를 누르면 지금 화면에서 즉시 보입니다(이 브라우저에만 저장).</p>
+    <h3 data-i18n="sheetTitle">사이트 추가</h3>
+    <p class="sub" data-i18n="sheetSub">아래를 채우면 미리보기가 바뀌고, 맨 아래 <b>sites.js에 붙여넣을 코드</b>가 자동 생성돼요.<br>“이 기기에 바로 추가”를 누르면 지금 화면에서 즉시 보입니다(이 브라우저에만 저장).</p>
 
     <div class="preview-wrap">
-      <div class="lbl">미리보기</div>
+      <div class="lbl" data-i18n="previewLbl">미리보기</div>
       <div class="grid" style="grid-template-columns:1fr;"><div id="preview"></div></div>
     </div>
 
-    <div class="field"><label>이름 *</label><input class="input" id="f-name" placeholder="예: 하루"></div>
+    <div class="field"><label data-i18n="fName">이름 *</label><input class="input" id="f-name" data-i18n-ph="phName" placeholder="예: 하루"></div>
     <div class="row2">
-      <div class="field"><label>부제 · 영문명</label><input class="input" id="f-sub" placeholder="Haru"></div>
-      <div class="field"><label>아이콘 (글자·이모지)</label><input class="input" id="f-icon" placeholder="하" maxlength="3"></div>
+      <div class="field"><label data-i18n="fSub">부제 · 영문명</label><input class="input" id="f-sub" placeholder="Haru"></div>
+      <div class="field"><label data-i18n="fIcon">아이콘 (글자·이모지)</label><input class="input" id="f-icon" data-i18n-ph="phIcon" placeholder="하" maxlength="3"></div>
     </div>
-    <div class="field"><label>설명</label><input class="input" id="f-desc" placeholder="한 줄 설명"></div>
-    <div class="field"><label>주소 (URL) *</label><input class="input" id="f-url" placeholder="https://..." inputmode="url"></div>
+    <div class="field"><label data-i18n="fDesc">설명</label><input class="input" id="f-desc" data-i18n-ph="phDesc" placeholder="한 줄 설명"></div>
+    <div class="field"><label data-i18n="fUrl">주소 (URL) *</label><input class="input" id="f-url" placeholder="https://..." inputmode="url"></div>
     <div class="row2">
-      <div class="field"><label>대표 색</label>
+      <div class="field"><label data-i18n="fColor">대표 색</label>
         <div class="color-field"><input type="color" id="f-color" value="#4f46e5"><input class="input" id="f-color-hex" value="#4f46e5"></div>
       </div>
-      <div class="field"><label>그라데이션 끝 색 (선택)</label>
-        <div class="color-field"><input type="color" id="f-color2" value="#7c6cf0"><input class="input" id="f-color2-hex" placeholder="없으면 비움"></div>
+      <div class="field"><label data-i18n="fColor2">그라데이션 끝 색 (선택)</label>
+        <div class="color-field"><input type="color" id="f-color2" value="#7c6cf0"><input class="input" id="f-color2-hex" data-i18n-ph="phColor2" placeholder="없으면 비움"></div>
       </div>
     </div>
-    <div class="field"><label>태그 (쉼표로 구분)</label><input class="input" id="f-tags" placeholder="일본어, 암기, 플래시카드"></div>
-    <div class="field"><label>특수 폰트 (선택 · 아이콘 글자가 안 보일 때만)</label><input class="input" id="f-font" placeholder="'Noto Sans Tagalog', sans-serif"></div>
+    <div class="field"><label data-i18n="fTags">태그 (쉼표로 구분)</label><input class="input" id="f-tags" data-i18n-ph="phTags" placeholder="일본어, 암기, 플래시카드"></div>
+    <div class="field"><label data-i18n="fFont">특수 폰트 (선택 · 아이콘 글자가 안 보일 때만)</label><input class="input" id="f-font" placeholder="'Noto Sans Tagalog', sans-serif"></div>
 
-    <div class="lbl" style="font-size:12px;font-weight:800;color:var(--sub);margin:6px 2px 0;">sites.js 에 붙여넣을 코드</div>
+    <div class="lbl" data-i18n="snippetLbl" style="font-size:12px;font-weight:800;color:var(--sub);margin:6px 2px 0;">sites.js 에 붙여넣을 코드</div>
     <pre class="snippet" id="snippet"></pre>
 
-    <button class="btn btn-accent" id="btn-copy" style="margin-top:14px;">📋 코드 복사</button>
-    <button class="btn btn-ghost" id="btn-addlocal">＋ 이 기기에 바로 추가</button>
-    <button class="btn btn-ghost" id="btn-cancel">닫기</button>
+    <button class="btn btn-accent" id="btn-copy" data-i18n="btnCopy" style="margin-top:14px;">📋 코드 복사</button>
+    <button class="btn btn-ghost" id="btn-addlocal" data-i18n="btnAddLocal">＋ 이 기기에 바로 추가</button>
+    <button class="btn btn-ghost" id="btn-cancel" data-i18n="btnClose">닫기</button>
   </div>
 </div>
 
@@ -277,6 +281,112 @@ footer{ text-align:center; color:var(--sub); font-size:12px; margin-top:34px; li
 const $  = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const LS_THEME = "hub-theme", LS_CUSTOM = "hub-custom-sites";
+
+/* ════════ 다국어 (한국어 ⇄ English) ════════ */
+const LS_LANG = "hub-lang";
+let L = (localStorage.getItem(LS_LANG)==="en"||localStorage.getItem(LS_LANG)==="ko")
+  ? localStorage.getItem(LS_LANG)
+  : (navigator.language && navigator.language.toLowerCase().startsWith("ko") ? "ko" : "en");
+const T = {
+  ko:{
+    themeTitle:"테마 전환",
+    heroTitle:"내가 만든 사이트,<br>한 곳에서 🗂️",
+    heroSub:"카드를 눌러 바로 들어가요. 새 사이트는 우측 하단에서 추가.",
+    searchPh:"사이트·태그 검색",
+    allTag:"전체",
+    footer:"모아 · moa — 사이트 추가는 <b>sites.js</b> 파일 또는 화면의 “＋ 사이트 추가” 버튼으로.",
+    emptyMsg:"조건에 맞는 사이트가 없어요 🔍",
+    countOne:n=>`사이트 ${n}개`,
+    countShown:m=>` · ${m}개 표시 중`,
+    localBadge:"로컬",
+    openAria:name=>`${name} 열기`,
+    deleteTitle:"목록에서 삭제",
+    deleteConfirm:"이 사이트를 목록에서 지울까요? (이 기기에 추가한 항목만 삭제됩니다)",
+    noTitle:"제목 없음",
+    addCard:"사이트 추가",
+    sheetTitle:"사이트 추가",
+    sheetSub:"아래를 채우면 미리보기가 바뀌고, 맨 아래 <b>sites.js에 붙여넣을 코드</b>가 자동 생성돼요.<br>“이 기기에 바로 추가”를 누르면 지금 화면에서 즉시 보입니다(이 브라우저에만 저장).",
+    previewLbl:"미리보기",
+    previewName:"이름",
+    previewDesc:"설명이 여기에 표시돼요",
+    fName:"이름 *", phName:"예: 하루",
+    fSub:"부제 · 영문명",
+    fIcon:"아이콘 (글자·이모지)", phIcon:"하",
+    fDesc:"설명", phDesc:"한 줄 설명",
+    fUrl:"주소 (URL) *",
+    fColor:"대표 색",
+    fColor2:"그라데이션 끝 색 (선택)", phColor2:"없으면 비움",
+    fTags:"태그 (쉼표로 구분)", phTags:"일본어, 암기, 플래시카드",
+    fFont:"특수 폰트 (선택 · 아이콘 글자가 안 보일 때만)",
+    snippetLbl:"sites.js 에 붙여넣을 코드",
+    btnCopy:"📋 코드 복사",
+    btnAddLocal:"＋ 이 기기에 바로 추가",
+    btnClose:"닫기",
+    toastCopied:"코드를 복사했어요 — sites.js에 붙여넣으세요",
+    toastCopiedShort:"코드를 복사했어요",
+    toastCopyFail:"복사 실패 — 코드를 직접 선택하세요",
+    toastNeedName:"이름을 입력하세요",
+    toastNeedUrl:"주소(URL)를 입력하세요",
+    toastAdded:"추가했어요 ✓ (이 기기에 저장)"
+  },
+  en:{
+    themeTitle:"Toggle theme",
+    heroTitle:"My sites,<br>all in one place 🗂️",
+    heroSub:"Tap a card to jump right in. Add new sites from the bottom right.",
+    searchPh:"Search sites or tags",
+    allTag:"All",
+    footer:"moa — add sites via the <b>sites.js</b> file or the on-screen “＋ Add site” button.",
+    emptyMsg:"No sites match your filters 🔍",
+    countOne:n=>`${n} site${n===1?"":"s"}`,
+    countShown:m=>` · ${m} shown`,
+    localBadge:"Local",
+    openAria:name=>`Open ${name}`,
+    deleteTitle:"Remove from list",
+    deleteConfirm:"Remove this site from the list? (Only items added on this device are deleted.)",
+    noTitle:"Untitled",
+    addCard:"Add site",
+    sheetTitle:"Add site",
+    sheetSub:"Fill in the fields below to update the preview, and the <b>code to paste into sites.js</b> is generated at the bottom.<br>Tap “Add to this device” to see it on screen right away (saved only in this browser).",
+    previewLbl:"Preview",
+    previewName:"Name",
+    previewDesc:"The description shows up here",
+    fName:"Name *", phName:"e.g. Haru",
+    fSub:"Subtitle · English name",
+    fIcon:"Icon (letter / emoji)", phIcon:"H",
+    fDesc:"Description", phDesc:"One-line description",
+    fUrl:"Address (URL) *",
+    fColor:"Main color",
+    fColor2:"Gradient end color (optional)", phColor2:"Leave blank if none",
+    fTags:"Tags (comma-separated)", phTags:"Japanese, memorize, flashcards",
+    fFont:"Special font (optional · only if the icon letter won't show)",
+    snippetLbl:"Code to paste into sites.js",
+    btnCopy:"📋 Copy code",
+    btnAddLocal:"＋ Add to this device",
+    btnClose:"Close",
+    toastCopied:"Code copied — paste it into sites.js",
+    toastCopiedShort:"Code copied",
+    toastCopyFail:"Copy failed — please select the code manually",
+    toastNeedName:"Please enter a name",
+    toastNeedUrl:"Please enter an address (URL)",
+    toastAdded:"Added ✓ (saved on this device)"
+  }
+};
+const tr = k => (T[L] && T[L][k]!=null) ? T[L][k] : (T.ko[k]!=null ? T.ko[k] : k);
+function applyStaticLang(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{ el.innerHTML = tr(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-title]").forEach(el=>{ el.title = tr(el.dataset.i18nTitle); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{ el.placeholder = tr(el.dataset.i18nPh); });
+}
+function applyLang(lang){
+  L = (lang==="en") ? "en" : "ko";
+  localStorage.setItem(LS_LANG, L);
+  document.documentElement.lang = L;
+  applyStaticLang();
+  document.querySelectorAll(".lang-btn").forEach(b=> b.textContent = (L==="en") ? "한" : "EN");
+  render();        // 그리드 + 태그바 + 카운트 라인 다시 그림
+  syncPreview();   // 시트가 열려 있으면 미리보기/스니펫도 갱신
+}
+document.querySelectorAll(".lang-btn").forEach(b=> b.addEventListener("click", ()=> applyLang(L==="en"?"ko":"en")));
 const esc = s => String(s==null?"":s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const slug = s => String(s||"").trim().toLowerCase().replace(/[^a-z0-9가-힣]+/g,"-").replace(/^-|-$/g,"") || ("site-"+Date.now().toString(36));
 
@@ -311,15 +421,15 @@ function cardHTML(s){
   const tags = (s.tags||[]).map(t => `<span class="tag">${esc(t)}</span>`).join("");
   const url  = /^https?:\/\//i.test(s.url||"") ? s.url : ("https://" + (s.url||""));
   return `<div class="site-card">
-    <a class="card-hit" href="${esc(url)}" aria-label="${esc(s.name)} 열기"></a>
+    <a class="card-hit" href="${esc(url)}" aria-label="${esc(tr("openAria")(s.name||tr("noTitle")))}"></a>
     <div class="tile" style="${tileStyle(s)}">${esc(s.icon||"•")}</div>
     <div class="card-body">
-      <div class="c-name">${esc(s.name||"제목 없음")}${s.sub?` <small>${esc(s.sub)}</small>`:""}</div>
+      <div class="c-name">${esc(s.name||tr("noTitle"))}${s.sub?` <small>${esc(s.sub)}</small>`:""}</div>
       ${s.desc?`<div class="c-desc">${esc(s.desc)}</div>`:""}
       ${tags?`<div class="c-tags">${tags}</div>`:""}
     </div>
     <span class="card-go">›</span>
-    ${s._local?`<span class="local-badge">로컬</span><button class="card-x" data-x="${esc(s.id)}" title="목록에서 삭제">×</button>`:""}
+    ${s._local?`<span class="local-badge">${esc(tr("localBadge"))}</span><button class="card-x" data-x="${esc(s.id)}" title="${esc(tr("deleteTitle"))}">×</button>`:""}
   </div>`;
 }
 
@@ -329,7 +439,7 @@ function render(){
   /* 태그바 */
   const tags = [...new Set(sites.flatMap(s => s.tags || []))];
   $("#tagbar").innerHTML =
-    `<button class="pill ${activeTag===""?"on":""}" data-tag="">전체</button>` +
+    `<button class="pill ${activeTag===""?"on":""}" data-tag="">${esc(tr("allTag"))}</button>` +
     tags.map(t => `<button class="pill ${activeTag===t?"on":""}" data-tag="${esc(t)}">${esc(t)}</button>`).join("");
 
   /* 필터 */
@@ -343,17 +453,17 @@ function render(){
     return true;
   });
 
-  $("#count-line").textContent = `사이트 ${sites.length}개` + (activeTag||q ? ` · ${list.length}개 표시 중` : "");
+  $("#count-line").textContent = tr("countOne")(sites.length) + (activeTag||q ? tr("countShown")(list.length) : "");
 
   $("#grid").innerHTML =
-    (list.length ? list.map(cardHTML).join("") : `<div class="empty-msg">조건에 맞는 사이트가 없어요 🔍</div>`)
-    + `<button class="add-card" id="add-card"><span class="ac-plus">＋</span>사이트 추가</button>`;
+    (list.length ? list.map(cardHTML).join("") : `<div class="empty-msg">${esc(tr("emptyMsg"))}</div>`)
+    + `<button class="add-card" id="add-card"><span class="ac-plus">＋</span>${esc(tr("addCard"))}</button>`;
 
   /* 바인딩 */
   $$("#tagbar [data-tag]").forEach(b => b.onclick = () => { activeTag = b.dataset.tag; render(); });
   $$(".card-x").forEach(b => b.onclick = e => {
     e.preventDefault(); e.stopPropagation();
-    if(confirm("이 사이트를 목록에서 지울까요? (이 기기에 추가한 항목만 삭제됩니다)")){
+    if(confirm(tr("deleteConfirm"))){
       saveCustom(customSites().filter(x => x.id !== b.dataset.x)); render();
     }
   });
@@ -410,7 +520,7 @@ function snippet(s){
 
 function syncPreview(){
   const s = readForm();
-  $("#preview").innerHTML = cardHTML({ ...s, name: s.name || "이름", desc: s.desc || "설명이 여기에 표시돼요" });
+  $("#preview").innerHTML = cardHTML({ ...s, name: s.name || tr("previewName"), desc: s.desc || tr("previewDesc") });
   $("#snippet").textContent = snippet(s);
 }
 ["f-name","f-sub","f-icon","f-desc","f-url","f-tags","f-font"].forEach(id =>
@@ -423,18 +533,18 @@ function toast(msg){
 
 $("#btn-copy").onclick = async () => {
   const code = snippet(readForm());
-  try{ await navigator.clipboard.writeText(code); toast("코드를 복사했어요 — sites.js에 붙여넣으세요"); }
+  try{ await navigator.clipboard.writeText(code); toast(tr("toastCopied")); }
   catch(e){
     const ta = document.createElement("textarea"); ta.value = code; document.body.appendChild(ta);
-    ta.select(); try{ document.execCommand("copy"); toast("코드를 복사했어요"); }catch(_){ toast("복사 실패 — 코드를 직접 선택하세요"); }
+    ta.select(); try{ document.execCommand("copy"); toast(tr("toastCopiedShort")); }catch(_){ toast(tr("toastCopyFail")); }
     ta.remove();
   }
 };
 
 $("#btn-addlocal").onclick = () => {
   const s = readForm();
-  if(!s.name){ toast("이름을 입력하세요"); return; }
-  if(!s.url){ toast("주소(URL)를 입력하세요"); return; }
+  if(!s.name){ toast(tr("toastNeedName")); return; }
+  if(!s.url){ toast(tr("toastNeedUrl")); return; }
   const cust = customSites();
   let id = s.id, n = 2; while([...(window.SITES||[]), ...cust].some(x => x.id === id)){ id = s.id + "-" + (n++); }
   cust.push({ ...s, id });
@@ -443,11 +553,12 @@ $("#btn-addlocal").onclick = () => {
   // 폼 초기화
   ["f-name","f-sub","f-icon","f-desc","f-url","f-tags","f-font","f-color2-hex"].forEach(i => $("#"+i).value="");
   render();
-  toast("추가했어요 ✓ (이 기기에 저장)");
+  toast(tr("toastAdded"));
 };
 
 /* 첫 렌더 */
 render();
+applyLang(L);   // 언어 적용 (정적 텍스트 + 동적 화면 재렌더)
 </script>
 </body>
 </html>

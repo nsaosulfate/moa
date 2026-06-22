@@ -92,6 +92,18 @@ window.SITES = [
     color: "#2563eb",
     color2: "#4f8cff",
     tags: ["지도", "지하철", "통근", "수도권"]
+  },
+
+  {
+    id: "jangbu",
+    name: "장부",
+    sub: "Jangbu",
+    desc: "캘린더로 보는 일별 수입·지출 · 월급/적금/구독 고정항목 · 월·분기·년 분석",
+    url: "https://nsaosulfate.github.io/jangbu/",
+    icon: "₩",
+    color: "#7c5cff",
+    color2: "#9d86ff",
+    tags: ["가계부", "지출", "돈", "도구"]
   }
 
 ];

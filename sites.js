@@ -95,6 +95,18 @@ window.SITES = [
   },
 
   {
+    id: "tonggeunmel",
+    name: "멜버른 통근권",
+    sub: "Melbourne",
+    desc: "멜버른 기차로 닿는 30·45·60분 통근 가능권을 지도에 표시 · 무료·키 불필요",
+    url: "https://nsaosulfate.github.io/tonggeun-mel/",
+    icon: "M",
+    color: "#1f7a4d",
+    color2: "#28a06a",
+    tags: ["지도", "기차", "통근", "멜버른"]
+  },
+
+  {
     id: "jangbu",
     name: "장부",
     sub: "Jangbu",

@@ -116,6 +116,18 @@ window.SITES = [
     color: "#7c5cff",
     color2: "#9d86ff",
     tags: ["가계부", "지출", "돈", "도구"]
+  },
+
+  {
+    id: "korearescue",
+    name: "Korea Rescue",
+    sub: "외국인 한국여행 가이드",
+    desc: "외국인·교포를 위한 한국여행 서바이벌 — eSIM·교통카드·KTX·택시·본인인증·맛집·공연을 한 흐름으로",
+    url: "https://clayborneyeounjunlee.github.io/korea-rescue/",
+    icon: "⛑",
+    color: "#2b6cff",
+    color2: "#5b8dff",
+    tags: ["여행", "외국인", "가이드", "도구"]
   }
 
 ];

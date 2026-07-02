@@ -128,6 +128,18 @@ window.SITES = [
     color: "#2b6cff",
     color2: "#5b8dff",
     tags: ["여행", "외국인", "가이드", "도구"]
+  },
+
+  {
+    id: "heartline",
+    name: "하트라인",
+    sub: "Heartline",
+    desc: "러닝 루트를 심박수 색으로 지도에 — Strava 연동 · 클라우드 동기화 · 코스 GPX",
+    url: "https://clayborneyeounjunlee.github.io/heartline/",
+    icon: "♥",
+    color: "#e05d3a",
+    color2: "#f2703d",
+    tags: ["러닝", "지도", "심박수", "운동"]
   }
 
 ];
